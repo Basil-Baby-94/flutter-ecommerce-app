@@ -30,11 +30,11 @@ class ProductListPage extends StatelessWidget {
                       const Spacer(),
                       DropdownButton<String>(
                         value: state.selectedCategory,
-                        hint: const Text('Select Category'),
+                        hint: const Text(AppConstants.kSelectCategory),
                         items: state.categories.map((String category) {
                           return DropdownMenuItem<String>(
                             value: category,
-                            child: Text(category),
+                            child: Text(category.toUpperCase()),
                           );
                         }).toList(),
                         onChanged: (category) {

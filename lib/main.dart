@@ -1,4 +1,4 @@
-import 'package:ecommerce_app/core/router.dart';
+import 'package:ecommerce_app/core/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -6,13 +6,14 @@ import '../presentation/pages/product_list.dart';
 final GoRouter router = GoRouter(
   routes: [
     GoRoute(
-      path: '/',
-      builder: (context, state) => const ProductListPage(),
-    ),
-    GoRoute(
-      path: '/product/:id',
-      builder: (context, state) =>
-          ProductDetailPage(id: state.pathParameters['id']!),
-    ),
+        path: '/',
+        builder: (context, state) => const ProductListPage(),
+        routes: [
+          GoRoute(
+            path: 'product/:id',
+            builder: (context, state) =>
+                ProductDetailPage(id: state.pathParameters['id']!),
+          ),
+        ]),
   ],
 );
