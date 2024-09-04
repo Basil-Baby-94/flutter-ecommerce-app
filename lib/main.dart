@@ -1,4 +1,5 @@
 import 'package:ecommerce_app/core/app_router.dart';
+import 'package:ecommerce_app/core/cache_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -7,8 +8,10 @@ import 'data/repositories/product_repositories.dart';
 import 'logic/product_bloc/product_bloc.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   final apiClient = ApiClient();
-  final productRepository = ProductRepository(apiClient);
+  final cacheManager = CustomCacheManager();
+  final productRepository = ProductRepository(apiClient, cacheManager);
   runApp(MainApp(
     productRepository: productRepository,
   ));
