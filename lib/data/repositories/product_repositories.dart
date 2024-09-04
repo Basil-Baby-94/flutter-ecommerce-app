@@ -26,7 +26,6 @@ class ProductRepository {
           statusCode: 200,
           requestOptions: RequestOptions(path: url),
         );
-        print("FROM CACHE");
       } else {
         // Fetch from API and cache it
         response = await _apiClient.get('/products');
@@ -36,7 +35,6 @@ class ProductRepository {
           Uint8List.fromList(data),
           fileExtension: 'json',
         );
-        print("FROM API");
       }
       return (response.data as List)
           .map((json) => Product.fromJson(json))

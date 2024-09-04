@@ -1,9 +1,8 @@
 import 'package:ecommerce_app/core/constants/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../core/constants/color_constants.dart';
 import '../../logic/product_bloc/product_bloc.dart';
+import '../widgets/category_picker_widget.dart';
 import '../widgets/product_widget.dart';
 
 class ProductListPage extends StatelessWidget {
@@ -28,33 +27,14 @@ class ProductListPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Spacer(),
-                      DropdownButton<String>(
-                        value: state.selectedCategory,
-                        hint: const Text(AppConstants.kSelectCategory),
-                        items: state.categories.map((String category) {
-                          return DropdownMenuItem<String>(
-                            value: category,
-                            child: Text(category.toUpperCase()),
-                          );
-                        }).toList(),
-                        onChanged: (category) {
+                      CategoryPicker(
+                        selectedCategory: state.selectedCategory,
+                        categories: state.categories,
+                        onCategorySelected: (category) {
                           context
                               .read<ProductBloc>()
                               .add(SelectCategory(category));
                         },
-                        style: const TextStyle(
-                          color: ColorConstants
-                              .primaryColor, // Text color in dropdown
-                          fontSize: 16,
-                        ),
-                        dropdownColor: Colors
-                            .deepPurple.shade50, // Dropdown background color
-                        icon: const Icon(Icons.arrow_drop_down,
-                            color: ColorConstants.primaryColor),
-                        underline: Container(
-                          height: 2,
-                          color: ColorConstants.primaryColor,
-                        ),
                       ),
                     ],
                   ),

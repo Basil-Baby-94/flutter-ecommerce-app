@@ -33,6 +33,7 @@ class MainApp extends StatelessWidget {
       ],
       child: MaterialApp.router(
         routerConfig: router,
+        debugShowCheckedModeBanner: false,
       ),
     );
   }
