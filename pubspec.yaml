@@ -9,6 +9,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  go_router: ^14.2.7
+  flutter_bloc: ^8.1.6
+  dio: ^5.7.0
+  flutter_cache_manager: ^3.4.1
 
 dev_dependencies:
   flutter_test:
