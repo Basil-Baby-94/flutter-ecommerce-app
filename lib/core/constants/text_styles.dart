@@ -13,9 +13,9 @@ class TextStyles {
     color: Colors.grey,
   );
 
-  static const TextStyle buttonText = TextStyle(
-    fontSize: 18,
-    fontWeight: FontWeight.w500,
-    color: Colors.white,
+  static const TextStyle priceText = TextStyle(
+    fontSize: 20,
+    color: Colors.red,
+    fontWeight: FontWeight.bold,
   );
 }
