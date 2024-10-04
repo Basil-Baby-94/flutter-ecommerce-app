@@ -16,11 +16,10 @@ This app uses the [Fake Store API](https://fakestoreapi.com) to fetch product an
 
 ## Screenshots
 
-### Home Screen
-![Home Screen](home.png)
-
-### Product Details Screen
-![Product Details Screen](details.png)
+<p align="center">
+  <img src="home.png" alt="Home Screen" width="45%" />
+  <img src="details.png" alt="Product Details Screen" width="45%" />
+</p>
 
 ## Getting Started
 
@@ -37,4 +36,3 @@ This app uses the [Fake Store API](https://fakestoreapi.com) to fetch product an
    ```bash
    git clone https://github.com/Basil-Baby-94/flutter-ecommerce-app.git
    cd flutter-ecommerce-app
-
